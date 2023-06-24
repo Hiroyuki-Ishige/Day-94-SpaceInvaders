@@ -26,6 +26,12 @@ sc.tracer(0)  # Turn OFF screen update. 0 is off, 1 is on
 player = Player()
 
 
+# set key listen---------------------------------------
+sc.listen()
+sc.onkey(player.move_left, "Left")
+sc.onkey(player.move_right, "Right")
+#-------------------------------------------------------
+
 sc.tracer(1) # Turn ON screen update. 0 is off, 1 is on
 
 sc.exitonclick()
@@ -33,7 +39,6 @@ sc.exitonclick()
 
 
 
-#TODO create player machine
 #TODO create missile
 #TODO create Invader (& missile from them)
 #TODO create UFO
