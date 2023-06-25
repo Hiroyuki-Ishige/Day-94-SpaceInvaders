@@ -8,6 +8,7 @@ import pickle
 import pprint
 
 from player_mc import Player
+from missile import Missile_player, shoot_missile
 
 # Fixed variables
 SCREEN_WIDTH = 800
@@ -28,11 +29,18 @@ player = Player()
 
 # set key listen---------------------------------------
 sc.listen()
-sc.onkey(player.move_left, "Left")
-sc.onkey(player.move_right, "Right")
-#-------------------------------------------------------
+sc.onkey(player.move_left, "z")
+sc.onkey(player.move_right, "x")
+sc.onkey(shoot_missile, "space")
 
-sc.tracer(1) # Turn ON screen update. 0 is off, 1 is on
+# game -------------------------------------------------------
+game_is_on = True
+while game_is_on:
+    time.sleep(0.01)
+
+
+
+    sc.tracer(1) # Turn ON screen update. 0 is off, 1 is on
 
 sc.exitonclick()
 # mainloop()
