@@ -27,10 +27,14 @@ sc.tracer(0)  # Turn OFF screen update. 0 is off, 1 is on
 # Create player
 player = Player()
 
+# Create invader (temploally put on here)
+invader = Invader()  # Create instance
+invader.create_invader()
+
 #------------------------------------------------------------
 def shoot_missile():
-    missile = Missile_player(x=player.xcor(), y=player.ycor())
-
+    all_invaders = invader.all_invaders
+    Missile_player(x=player.xcor(), y=player.ycor(), all_invaders=all_invaders)
 
 # set key listen---------------------------------------
 sc.listen()
@@ -38,9 +42,7 @@ sc.onkey(player.move_left, "z")
 sc.onkey(player.move_right, "x")
 sc.onkey(shoot_missile, "space")
 
-# Ireate invader (temploally put on here)
-invader = Invader()  # Create instance
-invader.create_invader()
+
 
 # game -------------------------------------------------------
 game_is_on = True

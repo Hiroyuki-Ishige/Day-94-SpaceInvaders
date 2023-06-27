@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle
 import time
 import random
@@ -7,6 +8,7 @@ INVADER_ROW = 4  # How many rows to create
 INVADER_COLUMN = 8 # How many blocks in horizontally (standard is 8)
 INVADER_PLACE = random.randint(0, 50)  # set first block at left side
 
+turtle.register_shape("./image/invader.gif")
 
 class Invader:
 
@@ -20,6 +22,7 @@ class Invader:
         for row in rows:
             for i in number_invaders:
                 new_invader = Turtle("square")
+                new_invader.shape("./image/invader.gif")
                 new_invader.penup()
                 new_invader.color(random.choice(COLORS))
                 new_invader.shapesize(stretch_wid=1, stretch_len=3)
