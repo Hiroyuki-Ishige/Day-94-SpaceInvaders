@@ -32,9 +32,10 @@ invader = Invader()  # Create instance
 invader.create_invader()
 
 #------------------------------------------------------------
+all_invaders = invader.all_invaders
 def shoot_missile():
-    all_invaders = invader.all_invaders
-    Missile_player(x=player.xcor(), y=player.ycor(), all_invaders=all_invaders)
+
+    missile_p = Missile_player(x=player.xcor(), y=player.ycor())
 
 # set key listen---------------------------------------
 sc.listen()
@@ -48,7 +49,7 @@ sc.onkey(shoot_missile, "space")
 game_is_on = True
 while game_is_on:
     time.sleep(0.001)
-
+    missile_p.missile_hit(all_invaders)
 
 
 
